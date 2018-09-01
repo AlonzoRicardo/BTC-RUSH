@@ -1,0 +1,104 @@
+* {
+    background: black;
+}
+
+.left-side-container {
+    float: left;    
+    margin: 0;
+    width: 45%;
+    height: 610px;
+    background: brown;
+}
+
+.right-side-container {
+    margin: 0;
+    float: right;
+    width: 45%;
+    height: 610px;
+    background: grey;
+}
+
+.btc-usd {
+    
+    background-color: rgba(240, 248, 255, 0);
+    font-size: 2vw;
+    color: antiquewhite;
+    position: absolute;
+    margin: 1vw;
+    left: 44.75%;
+    top: 0px;
+    z-index: 1;
+}
+
+.btc-usd-price {
+    text-align: center;
+    margin: 0.1vw;
+    width: 10vw;
+    top: 3vw;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stats-bar {
+    
+    padding: 2vw;
+    border: 1px solid white;
+    height: 5vw;
+}
+
+.stats-bar h1 {
+    margin: 0.1vw 1.1vw;
+    display: inline-block;
+    color: aliceblue;
+    font-size: 0.9vw;
+}
+
+.stat-box {
+    display: inline-block;
+    text-align: center;
+    height: 5vw;
+    width: 6vw;
+    margin: 0 1vw;
+}
+
+.total-blocks-mined {
+    text-align: center;
+    margin: 0.1vw;
+    width: 10vw;
+    top: 6vw;
+}
+
+.blocks-num {
+    text-align: center;
+    margin: 0.1vw;
+    width: 10vw;
+    top: 12.4vw;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.total-coins {
+    text-align: center;
+    margin: 0.1vw;
+    width: 10vw;
+    top: 15vw;
+}
+
+.coin-num {
+    text-align: center;
+    margin: 0.1vw;
+    width: 10vw;
+    top: 18vw;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+button {
+    color: aliceblue;
+}
+
+.buttons {
+    margin-top: 1px;
+    display: flex;
+    flex-direction: column;
+    width: 5vw;
+}
+
+
