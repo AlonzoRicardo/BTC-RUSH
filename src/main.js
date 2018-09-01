@@ -20,7 +20,7 @@ BtcRushGame.prototype.checkWin = function () {
 //this function is made to reduce the total ammount
 BtcRushGame.prototype.reduceTotalCoins = function () {
     this.totalCoins -= this.reward;
-    //console.log("TOTAL COINS AVAILABLE: " + this.totalCoins);
+    console.log("TOTAL COINS AVAILABLE: " + this.totalCoins);
 }
 
 //this is a counter of the blocks that get mined, in reality
@@ -28,6 +28,7 @@ BtcRushGame.prototype.reduceTotalCoins = function () {
 // 10 minutes to have fun
 BtcRushGame.prototype.increaseBlocksMined = function () {
     setInterval(function () {
+        this.reduceTotalCoins();
         this.blocksMined++;
         //console.log("TOTAL BLOCKS MINED: " + this.blocksMined);
     }.bind(this), 1000)
@@ -60,34 +61,38 @@ class Miner {
                 console.log(this.rigs);
                 //this.ownedCoins += Math.round((btcRushGame.reward / btcRushGame.totalRigs * this.rigs)/100).toFixed(2);
                 //this.ownedCoins += ((btcRushGame.reward / btcRushGame.totalRigs)* this.rigs).toFixed();
-                btcRushGame.reduceTotalCoins();
+                
                 this.ownedDollars = this.ownedCoins * btcRushGame.btc_dollar;
                 console.log(this.name + " MINER OWNES COINS: " + this.ownedCoins);
                 console.log(this.name + " MINER OWNES DOLLARS: " + this.ownedDollars + "$");
                 btcRushGame.checkWin();
             }.bind(this), 1000);
         };
-
-        //function to buy more mining power / hash Power...
-        this.buyRig = function () {
-            if(this.ownedDollars >= btcRushGame.rigCost) {
-                btcRushGame.totalRigs++;
-                this.rigs++;
-                this.ownedCoins -= btcRushGame.rigCost / btcRushGame.btc_dollar;
-            } else {
-                console.log('insuficient MONEEEY');
-            }
-        }
-
-        this.stopMining = function () {
-            clearInterval(this.setInterval);
-        }
     }
 }
 
+//function to buy more mining power / hash Power...
+Miner.prototype.buyRig = function () {
+    if(this.ownedDollars >= btcRushGame.rigCost) {
+        btcRushGame.totalRigs++;
+        this.rigs++;
+        this.ownedCoins -= btcRushGame.rigCost / btcRushGame.btc_dollar;
+    } else {
+        console.log('insuficient MONEEEY');
+    }
+}
+
+//function to stop mining btc, basically when the game ends
+Miner.prototype.stopMining = function () {
+    clearInterval(this.setInterval);
+}
+
+
+//function that allows the miners to try their luck, gamble 10 btc and see the results after 3 seconds
+//its 40/60 chance, so 6 times out of 10 the gambler will win.
 Miner.prototype.gamble = function () {
     setTimeout(function () {
-        if (Math.random() < 0.5) {
+        if (Math.random() * 1 < 0.4) {
             this.ownedCoins += 10;
             console.log("LUCKY SOMBICH " + this.ownedCoins);
         } else {
@@ -97,6 +102,9 @@ Miner.prototype.gamble = function () {
     }.bind(this), 3000)
 }
 
+
+
+/*-----------------------------------------------------------------------*/
 var btcRushGame = new BtcRushGame();
 btcRushGame.speculation();
 btcRushGame.increaseBlocksMined();
