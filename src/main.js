@@ -85,6 +85,18 @@ class Miner {
     }
 }
 
+Miner.prototype.gamble = function () {
+    setTimeout(function () {
+        if (Math.random() < 0.5) {
+            this.ownedCoins += 10;
+            console.log("LUCKY SOMBICH " + this.ownedCoins);
+        } else {
+            this.ownedCoins -= 10;
+            console.log("UNLUCKY TY 4 UR MONEY" + this.ownedCoins);
+        }
+    }.bind(this), 3000)
+}
+
 var btcRushGame = new BtcRushGame();
 btcRushGame.speculation();
 btcRushGame.increaseBlocksMined();
