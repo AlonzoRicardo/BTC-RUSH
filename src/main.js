@@ -1,3 +1,4 @@
+//Game constructor
 class BtcRushGame {
     constructor() {
         this.blocksMined = 1;
@@ -44,7 +45,7 @@ BtcRushGame.prototype.speculation = function () {
 
 
 
-
+//Player constructor
 class Miner {
     constructor(name) {
         this.name = name;
@@ -108,24 +109,10 @@ Miner.prototype.gamble = function () {
 
 
 /*-----------------------------------------------------------------------*/
-var btcRushGame = new BtcRushGame();
+/* var btcRushGame = new BtcRushGame();
 btcRushGame.speculation();
 btcRushGame.increaseBlocksMined();
-var miner1 = new Miner("SNOOPA");
 //miner1.rigs = 1;
-var miner2 = new Miner("BRATO");
+var miner1 = new Miner("SNOOPA");
+var miner2 = new Miner("BRATO"); */
 
-function start() {
-    
-    miner1.mine();
-    miner2.mine();
-}
-
-function stop() {
-    miner1.stopMining();
-    miner2.stopMining();
-}
-
-
-
-//reward / totalRigs * ownedRigs
