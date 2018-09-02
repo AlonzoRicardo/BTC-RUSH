@@ -53,22 +53,25 @@ class Miner {
         this.ownedCoins = 50;
         this.ownedDollars = 1;
         this.setInterval;
-        this.mine = function () {
-            this.setInterval = setInterval(function () {
-                this.fraction = (btcRushGame.reward / btcRushGame.totalRigs) * this.rigs;
-                this.ownedCoins += this.fraction * btcRushGame.reward;
-                console.log("THIS IS MY CUT " + this.fraction);
-                console.log(this.rigs);
-                //this.ownedCoins += Math.round((btcRushGame.reward / btcRushGame.totalRigs * this.rigs)/100).toFixed(2);
-                //this.ownedCoins += ((btcRushGame.reward / btcRushGame.totalRigs)* this.rigs).toFixed();
-                
-                this.ownedDollars = this.ownedCoins * btcRushGame.btc_dollar;
-                console.log(this.name + " MINER OWNES COINS: " + this.ownedCoins);
-                console.log(this.name + " MINER OWNES DOLLARS: " + this.ownedDollars + "$");
-                btcRushGame.checkWin();
-            }.bind(this), 1000);
-        };
     }
+}
+
+
+//Function to make the miners mine btc every second...
+//It rewards the miners with a fraction of the btc reward based on how many rigs they have
+//This is actually how mining works in real life when you mine in pools
+//It also updates the amount of $$$ they have 
+Miner.prototype.mine = function () {
+    this.setInterval = setInterval(function () {
+        this.fraction = (btcRushGame.reward / btcRushGame.totalRigs) * this.rigs;
+        this.ownedCoins += this.fraction * btcRushGame.reward;
+        console.log("THIS IS MY CUT " + this.fraction);
+        console.log(this.rigs);
+        this.ownedDollars = this.ownedCoins * btcRushGame.btc_dollar;
+        console.log(this.name + " MINER OWNES COINS: " + this.ownedCoins);
+        console.log(this.name + " MINER OWNES DOLLARS: " + this.ownedDollars + "$");
+        btcRushGame.checkWin();
+    }.bind(this), 1000);
 }
 
 //function to buy more mining power / hash Power...
