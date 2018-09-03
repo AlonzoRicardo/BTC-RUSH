@@ -12,6 +12,8 @@ function stop() {
     miner2.stopMining();
 }
 
+
+
 //Updates the fraction of the reward for each player in the DOM
 function updateDomRewardFraction() {
     $('#player-1-Rewardfraction').html(Math.round(miner1.fraction * 1000) / 1000);
@@ -68,6 +70,8 @@ var miner1Controls = function (e) {
             miner1.buyRig()
         } else if (key === keyS) {
             miner1.gamble()
+        } else if (key === keyD) {
+            miner1.buyCampus()
         }
 }
 
@@ -79,6 +83,8 @@ var miner2Controls = function (e) {
             miner2.buyRig()
         } else if (key === keyK) {
             miner2.gamble()
+        } else if (key === keyJ) {
+            miner2.buyCampus()
         }
 }
 
@@ -107,3 +113,5 @@ var keyA = 65;
 var keyS = 83;
 var keyK = 75;
 var keyL = 76;
+var keyJ = 74;
+var keyD = 68;

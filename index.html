@@ -1,59 +1,63 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="styles/style.css">
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Page Title</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="src/main.js"></script>
-        <script src="src/players.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+<head>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/effects.css">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>BTC RUSH</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="src/main.js"></script>
+    <script src="src/players.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
     <script src="src/scripts.js"></script>
+    <script src="src/effects.js"></script>
 </head>
 
 <body>
     <div class="left-side-container">
-        <div class="stats-bar">
-            
-                
-                    <div class="stat-box">
-                        <h1>Player Name</h1>
-                        <h1 id="player-1-id"></h1>
-                    </div>
-                    <div class="stat-box">
-                        <h1>Coins</h1>
-                        <h1 id="player-1-ownedCoins">50</h1>
-                    </div>
-                    <div class="stat-box">
-                        <h1>Rigs</h1>
-                        <h1 id="player-1-ownedRigs">1</h1>
-                    </div>
-                    <div class="stat-box">
-                        <h1>Reward</h1>
-                        <h1 id="player-1-Rewardfraction">0.5</h1>
-                    </div>
-                
+        <div class="tv-container">
+            <div class="stats-bar player1-stats">
+                <div class="stat-box">
+                    <h1>Player Name</h1>
+                    <h1 id="player-1-id"></h1>
+                </div>
+                <div class="stat-box">
+                    <h1>Coins</h1>
+                    <h1 id="player-1-ownedCoins">50</h1>
+                </div>
+                <div class="stat-box">
+                    <h1>Rigs</h1>
+                    <h1 id="player-1-ownedRigs">1</h1>
+                </div>
+                <div class="stat-box">
+                    <h1>Reward</h1>
+                    <h1 id="player-1-Rewardfraction">0.5</h1>
+                </div>
+            </div>
+            <div class="stats-bar player1-controls">
+                <div class="stat-box">
+                    <h1>Buy Miners Press "A"</h1>
+                </div>
+                <div class="stat-box">
+                    <h1>Gamble Press "S"</h1>
+                </div>
+                <div class="stat-box">
+                    <h1>Buy IHs Press "D"</h1>
+                </div>
+                <div class="stat-box">
+                    <h1>Hack Press "C"</h1>
+                </div>
+            </div>
+
         </div>
 
 
-         <img class="tv" src="img/Futuristic-tv.png" alt="">
-        <img class="tv" src="img/Futuristic-tv.png" alt="">
-         <!-- <div class="buttons">
-            <button>Buy Miners</button>
-            <button>Gamble</button>
-        </div> -->
-    </div>
-    <h1 class="btc-usd">BTC/USD</h1>
-    <h1 class="btc-usd btc-usd-price"></h1>
-    <h1 class="btc-usd total-blocks-mined">Total Blocks Mined</h1>
-    <h1 class="btc-usd blocks-num"></h1>
-    <h1 class="btc-usd total-coins">Total Coins</h1>
-    <h1 class="btc-usd coin-num">2100</h1>
-    <img id="anti-frame" src="img/antique-frame.png" alt="">
-    <div class="right-side-container">
-        <div class="stats-bar">
-            
+
+        <div class="tv-container">
+            <div class="stats-bar player2-stats">
                 <div class="stat-box">
                     <h1>Player Name</h1>
                     <h1 id="player-2-id"></h1>
@@ -70,45 +74,81 @@
                     <h1>Reward</h1>
                     <h1 id="player-2-Rewardfraction">0.5</h1>
                 </div>
+            </div>
+
+            <div class="stats-bar player2-controls">
+                <div class="stat-box">
+                    <h1>Buy Miners Press "L"</h1>
+                </div>
+                <div class="stat-box">
+                    <h1>Gamble Press "K"</h1>
+                </div>
+                <div class="stat-box">
+                    <h1>Buy IHs Press "J"</h1>
+                </div>
+                <div class="stat-box">
+                    <h1>Hack Press "N"</h1>
+                </div>
+            </div>
         </div>
+
+        <!-- <img class="tv" src="img/Futuristic-tv.png" alt="">
+        <img class="tv" src="img/Futuristic-tv.png" alt="">
+         -->
+        <!-- <div class="buttons">
+            <button>Buy Miners</button>
+            <button>Gamble</button>
+        </div> -->
+    </div>
+    <h1 class="btc-usd">BTC/USD</h1>
+    <h1 class="btc-usd btc-usd-price"></h1>
+    <h1 class="btc-usd total-blocks-mined">Total Blocks Mined</h1>
+    <h1 class="btc-usd blocks-num"></h1>
+    <h1 class="btc-usd total-coins">Total Coins</h1>
+    <h1 class="btc-usd coin-num">2100</h1>
+    <img id="anti-frame" src="img/antique-frame.png" alt="">
+    <div class="right-side-container">
+
         <div class="tvs-right">
             <h1 id="something">something something</h1>
             <!-- <img class="tv" src="img/Futuristic-tv.png" alt="">
             <img class="tv" src="img/Futuristic-tv.png" alt="">
-         --></div>
-         <div id="campuses">
+         -->
+        </div>
+        <div id="campuses">
             <div class="tooltip">
                 <img id="barcelona" src="img/ironhack_logonegro.png" alt="IH barcelona">
                 <span class="tooltiptext">Barcelona 2.000.000$</span>
             </div>
 
             <div class="tooltip">
-                 <img src="img/ironhack_logonegro.png" alt="">
-                 <span class="tooltiptext">Amsterdam 2.000.000$</span>
+                <img id="amsterdam" src="img/ironhack_logonegro.png" alt="">
+                <span class="tooltiptext">Amsterdam 2.000.000$</span>
             </div>
 
             <div class="tooltip">
-                <img src="img/ironhack_logonegro.png" alt="">
+                <img id="paris" src="img/ironhack_logonegro.png" alt="">
                 <span class="tooltiptext">Paris 4.000.000$</span>
             </div>
 
             <div class="tooltip">
-                <img src="img/ironhack_logonegro.png" alt="">
+                <img id="berlin" src="img/ironhack_logonegro.png" alt="">
                 <span class="tooltiptext">Berlin 4.000.000$</span>
             </div>
 
             <div class="tooltip">
-                <img src="img/ironhack_logonegro.png" alt="">
+                <img id="madrid" src="img/ironhack_logonegro.png" alt="">
                 <span class="tooltiptext">Madrid 8.000.000$</span>
             </div>
-         </div>
-                <!-- <div class="buttons">
+        </div>
+        <!-- <div class="buttons">
                     <button>Buy Miners</button>
                     <button>Gamble</button>
                 </div> -->
     </div>
 
-  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.js"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.js"></script>-->
     <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
 </body>
+
 </html>

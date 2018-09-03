@@ -66,15 +66,17 @@ Miner.prototype.gamble = function () {
 
 //Buys IH campuses, it removes the bought campus from the game campuses array of objects
 //It also updates the owned coins and adds the bought campus to the bought campus array
+//Also updates the score to know who bought which campus
 Miner.prototype.buyCampus = function() {
     for (var i = 0; i < btcRushGame.ironHackCampus.length; i++) {
         var campusPrice = Object.values(btcRushGame.ironHackCampus[i]).pop()
+        var campusName = Object.keys(btcRushGame.ironHackCampus[i]).pop()
         if (this.ownedDollars >= campusPrice) {
             console.log('BOUGHT ' + btcRushGame.ironHackCampus[i]);
             this.ownedCampus.push(btcRushGame.ironHackCampus[i])
             this.ownedCoins -= campusPrice / btcRushGame.btc_dollar;
             btcRushGame.ironHackCampus.splice(i, 1);
-            stop();
+            campusBoughtBorders(this, campusName);
             btcRushGame.checkWin(this);
         } else {
             console.log('not enough money');
