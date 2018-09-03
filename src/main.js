@@ -30,7 +30,9 @@ BtcRushGame.prototype.reduceTotalCoins = function () {
 BtcRushGame.prototype.increaseBlocksMined = function () {
     setInterval(function () {
         this.reduceTotalCoins();
+        updateDomTotalCoins();
         this.blocksMined++;
+        updateDomBlocksMined();
         //console.log("TOTAL BLOCKS MINED: " + this.blocksMined);
     }.bind(this), 1000)
 }
@@ -38,7 +40,8 @@ BtcRushGame.prototype.increaseBlocksMined = function () {
 //Made to try to simulate BITCOINS ascending price curve!
 BtcRushGame.prototype.speculation = function () {
     setInterval(function () {
-        this.btc_dollar = Math.floor(Math.random() * this.blocksMined)
+        this.btc_dollar = Math.floor(Math.random() * (this.blocksMined ** 3))
+        updateDomBtcPrice();
         console.log("BTC/USD " + this.btc_dollar + "$");
     }.bind(this), 5000)
 }

@@ -12,6 +12,29 @@ function stop() {
     miner2.stopMining();
 }
 
+//Updates the BTC/USD price in the DOM
+function updateDomBtcPrice () {
+    $('.btc-usd-price').html(btcRushGame.btc_dollar+'$')
+}
+
+//Updates the Blocks Mined counter in the DOM
+function updateDomBlocksMined() {
+    $('.blocks-num').html(btcRushGame.blocksMined)
+}
+
+//Updates the total Coins available in the DOM
+function updateDomTotalCoins() {
+    $('.coin-num').html(btcRushGame.totalCoins)
+}
+
+//creates new game and initializes the btc/usd speculation function
+//and the blocks counter
+function startGame() {
+    btcRushGame = new BtcRushGame();
+    btcRushGame.speculation();
+    btcRushGame.increaseBlocksMined();
+}
+
 //function to make specific keys call specific functions
 //basically the controls for player 1
 var miner1Controls = function (e) {
@@ -34,10 +57,9 @@ var miner2Controls = function (e) {
         }
 }
 
+//function that runs when the page loads.
 var init = function () {
-    btcRushGame = new BtcRushGame();
-    btcRushGame.speculation();
-    btcRushGame.increaseBlocksMined();
+    startGame();
     var p1Name = prompt("Player 1 Name");
     var p2Name = prompt("Player 2 Name");
     miner1 = new Miner(p1Name);
