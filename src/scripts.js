@@ -12,6 +12,17 @@ function stop() {
     miner2.stopMining();
 }
 
+function updateDomOwnedCoins() {
+    $('#palyer-1-ownedCoins').html(Math.round(miner1.ownedCoins * 100) / 100);
+    $('#palyer-2-ownedCoins').html(Math.round(miner2.ownedCoins * 100) / 100);
+}
+
+//function to update Player names once prompted in the DOM
+function updateDomPlayerNames (p1, p2) {
+    $('#player-1-id').html(p1);
+    $('#player-2-id').html(p2);
+}
+
 //Updates the BTC/USD price in the DOM
 function updateDomBtcPrice () {
     $('.btc-usd-price').html(btcRushGame.btc_dollar+'$')
@@ -24,6 +35,7 @@ function updateDomBlocksMined() {
 
 //Updates the total Coins available in the DOM
 function updateDomTotalCoins() {
+    updateDomPlayerNames(miner1.name, miner2.name); //shouldnt go here
     $('.coin-num').html(btcRushGame.totalCoins)
 }
 
