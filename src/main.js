@@ -21,7 +21,7 @@ BtcRushGame.prototype.checkWin = function () {
 //this function is made to reduce the total ammount
 BtcRushGame.prototype.reduceTotalCoins = function () {
     this.totalCoins -= this.reward;
-    console.log("TOTAL COINS AVAILABLE: " + this.totalCoins);
+    //console.log("TOTAL COINS AVAILABLE: " + this.totalCoins);
 }
 
 //this is a counter of the blocks that get mined, in reality
