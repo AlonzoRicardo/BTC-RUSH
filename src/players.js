@@ -5,8 +5,9 @@ class Miner {
         this.name = name;
         this.rigs = 1;
         this.fraction = 0.5;
-        this.ownedCoins = 50;
+        this.ownedCoins = 1000;
         this.ownedDollars = 1;
+        this.ownedCampus = [];
         this.setInterval;
     }
 }
@@ -24,9 +25,10 @@ Miner.prototype.mine = function () {
         //console.log(this.rigs);
         this.ownedDollars = this.ownedCoins * btcRushGame.btc_dollar;
         //console.log(this.name + " MINER OWNES COINS: " + this.ownedCoins);
-        //console.log(this.name + " MINER OWNES DOLLARS: " + this.ownedDollars + "$");
+        console.log(this.name + " MINER OWNES DOLLARS: " + this.ownedDollars + "$");
         updateDomOwnedCoins();
-        btcRushGame.checkWin();
+        updateDomRewardFraction();
+        //btcRushGame.checkWin();
     }.bind(this), 1000);
 }
 
@@ -36,6 +38,7 @@ Miner.prototype.buyRig = function () {
         btcRushGame.totalRigs++;
         this.rigs++;
         this.ownedCoins -= btcRushGame.rigCost / btcRushGame.btc_dollar;
+        updateDomOwnedRigs();
     } else {
         console.log('insuficient MONEEEY');
     }
@@ -59,4 +62,23 @@ Miner.prototype.gamble = function () {
             console.log("UNLUCKY TY 4 UR MONEY" + this.ownedCoins);
         }
     }.bind(this), 3000)
+}
+
+//Buys IH campuses, it removes the bought campus from the game campuses array of objects
+//It also updates the owned coins and adds the bought campus to the bought campus array
+Miner.prototype.buyCampus = function() {
+    for (var i = 0; i < btcRushGame.ironHackCampus.length; i++) {
+        var campusPrice = Object.values(btcRushGame.ironHackCampus[i]).pop()
+        if (this.ownedDollars >= campusPrice) {
+            console.log('BOUGHT ' + btcRushGame.ironHackCampus[i]);
+            this.ownedCampus.push(btcRushGame.ironHackCampus[i])
+            this.ownedCoins -= campusPrice / btcRushGame.btc_dollar;
+            btcRushGame.ironHackCampus.splice(i, 1);
+            stop();
+            btcRushGame.checkWin(this);
+        } else {
+            console.log('not enough money');
+        }
+    }
+    
 }

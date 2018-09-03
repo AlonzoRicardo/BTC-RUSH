@@ -12,9 +12,22 @@ function stop() {
     miner2.stopMining();
 }
 
+//Updates the fraction of the reward for each player in the DOM
+function updateDomRewardFraction() {
+    $('#player-1-Rewardfraction').html(Math.round(miner1.fraction * 1000) / 1000);
+    $('#player-2-Rewardfraction').html(Math.round(miner2.fraction * 1000) / 1000);
+}
+
+//Updates the number of owned rigs for each player in the DOM
+function updateDomOwnedRigs () {
+    $("#player-1-ownedRigs").html(miner1.rigs);
+    $("#player-2-ownedRigs").html(miner2.rigs);
+}
+
+//Updates the coins of each player in the DOM
 function updateDomOwnedCoins() {
-    $('#palyer-1-ownedCoins').html(Math.round(miner1.ownedCoins * 100) / 100);
-    $('#palyer-2-ownedCoins').html(Math.round(miner2.ownedCoins * 100) / 100);
+    $('#player-1-ownedCoins').html(Math.round(miner1.ownedCoins * 100) / 100);
+    $('#player-2-ownedCoins').html(Math.round(miner2.ownedCoins * 100) / 100);
 }
 
 //function to update Player names once prompted in the DOM
@@ -81,6 +94,7 @@ var init = function () {
         miner2Controls(e);
         //start();
     });
+    start();
 //add event listeners to the buttons 
 //and make them call functions outside 
 //this one

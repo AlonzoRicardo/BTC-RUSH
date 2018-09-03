@@ -6,14 +6,33 @@ class BtcRushGame {
         this.btc_dollar = 7;
         this.reward = 1;
         this.totalRigs = 2;
-        this.rigCost = 100;
+        this.rigCost = 2000;
+        this.ironHackCampus = [
+            {
+            amsterdam: 2000000
+            },
+            {
+            barcelona: 2000000
+            },
+            {
+            berlin: 4000000
+            },
+            {
+            paris: 4000000    
+            },
+            {
+            madrid: 8000000
+            }
+        ]
     }
 }
 
 //regular winning condition function
-BtcRushGame.prototype.checkWin = function () {
-    if (this.totalCoins <= 0) {
-        miner1.stopMining();
+BtcRushGame.prototype.checkWin = function (player) {
+    if (player.ownedCampus.length >= 3){
+        stop();
+        alert(player.name + ' WON');
+        console.log(player.name + ' WON');
     }
 }
 
@@ -40,17 +59,12 @@ BtcRushGame.prototype.increaseBlocksMined = function () {
 //Made to try to simulate BITCOINS ascending price curve!
 BtcRushGame.prototype.speculation = function () {
     setInterval(function () {
-        this.btc_dollar = Math.floor(Math.random() * (this.blocksMined ** 3))
+        this.btc_dollar = Math.floor(Math.random() * (this.blocksMined ** 2))
         updateDomBtcPrice();
-        console.log("BTC/USD " + this.btc_dollar + "$");
+        //console.log("BTC/USD " + this.btc_dollar + "$");
     }.bind(this), 5000)
 }
 
 /*-----------------------------------------------------------------------*/
-/* var btcRushGame = new BtcRushGame();
-btcRushGame.speculation();
-btcRushGame.increaseBlocksMined();
-//miner1.rigs = 1;
-var miner1 = new Miner("SNOOPA");
-var miner2 = new Miner("BRATO"); */
+
 
