@@ -68,10 +68,13 @@ function startGame() {
 var miner1Controls = function (e) {
     var key = e.keyCode;
         if (key === keyA) {
+            miner1Effect(e)
             miner1.buyRig()
         } else if (key === keyS) {
+            miner1Effect(e)
             miner1.gamble()
         } else if (key === keyD) {
+            miner1Effect(e)
             miner1.buyCampus()
         }
 }
@@ -81,10 +84,13 @@ var miner1Controls = function (e) {
 var miner2Controls = function (e) {
     var key = e.keyCode;
         if (key === keyL) {
+            miner2Effect(e)
             miner2.buyRig()
         } else if (key === keyK) {
+            miner2Effect(e)
             miner2.gamble()
         } else if (key === keyJ) {
+            miner2Effect(e)
             miner2.buyCampus()
         }
 }
