@@ -76,6 +76,10 @@ var miner1Controls = function (e) {
         } else if (key === keyD) {
             miner1Effect(e)
             miner1.buyCampus()
+        } else if (key === keyC) {
+            console.log('entra');
+            miner1Effect(e)
+            miner1.hack()
         }
 }
 
@@ -92,6 +96,11 @@ var miner2Controls = function (e) {
         } else if (key === keyJ) {
             miner2Effect(e)
             miner2.buyCampus()
+        } else if (key === keyN) {
+            console.log('entra');
+            
+            miner2Effect(e)
+            miner2.hack();
         }
 }
 
@@ -122,3 +131,5 @@ var keyK = 75;
 var keyL = 76;
 var keyJ = 74;
 var keyD = 68;
+var keyC = 67;
+var keyN = 78;

@@ -7,6 +7,7 @@ function campusBoughtBorders(player, city) {
     }
 }
 
+//function to display the keypresses in each screen of player1
 function miner1Effect(e) {
     var key = e.keyCode;
     if (key === keyA) {
@@ -24,9 +25,15 @@ function miner1Effect(e) {
         setTimeout(function(){
         $('.D').css({"color": 'rgb(0, 255, 0)'});
         }, 60);
+    } else if (key === keyC) {
+        $('.C').css({"color": 'white'});
+        setTimeout(function(){
+        $('.C').css({"color": 'rgb(0, 255, 0)'});
+        }, 60);
     }
 }
 
+//function to display the keypresses in each screen of player1
 function miner2Effect(e) {
     var key = e.keyCode;
         if (key === keyL) {
@@ -43,6 +50,11 @@ function miner2Effect(e) {
         $('.J').css({"color": 'white'});
         setTimeout(function(){
         $('.J').css({"color": 'rgb(98, 0, 255)'});
+        }, 60);
+        } else if (key === keyN) {
+        $('.N').css({"color": 'white'});
+        setTimeout(function(){
+        $('.N').css({"color": 'rgb(98, 0, 255)'});
         }, 60);
         }
 }

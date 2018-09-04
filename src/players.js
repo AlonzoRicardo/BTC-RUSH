@@ -77,6 +77,21 @@ Miner.prototype.buyCampus = function() {
         } else {
             console.log('not enough money');
         }
+    }   
+}
+
+//Functions that allows each player to hack the other one for a 20% of their
+//current holding
+Miner.prototype.hack = function () {
+    if (this === miner1) {
+       if (Math.random() * 1 < 0.5) {
+           this.ownedCoins += miner2.ownedCoins * 0.2;
+           miner2.ownedCoins -= miner2.ownedCoins * 0.2;
+       }
+    } else if (this === miner2) {
+        if (Math.random() * 1 < 0.5) {
+            this.ownedCoins += miner1.ownedCoins * 0.2;
+            miner1.ownedCoins -= miner1.ownedCoins * 0.2;
+        }
     }
-    
 }
