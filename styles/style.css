@@ -50,32 +50,32 @@
 }
 
 .player1-stats {
-    margin: 3vw 0;
+    margin: 0.8vw 0 0 0;
     color: rgb(0, 255, 0);
     top: 1.3vw;
-    left: 4vw;
+    left: 2vw;
 }
 
 .player1-controls {
-    margin: 5vw 0;
+    margin: 2vw 0 0 0;
     color: rgb(0, 255, 0);
     top: 9vw;
-    left: 4vw; 
+    left: 2vw; 
 }
 
 .player2-stats {
-    margin: 10vw 0;
+    margin: 8vw 0 0 0;
     color: rgb(98, 0, 255);
-    top: 21vw;
-    left: 4vw;
+    top: 16vw;
+    left: 2vw;
 }
 
 
 .player2-controls {
-    margin: 15vw 0 5vw 0;
+    margin: 12vw 0 0 0;
     color: rgb(98, 0, 255);
-    top: 28vw;
-    left: 4vw; 
+    top: 20vw;
+    left: 2vw; 
 }
 
 .stat-box {
@@ -117,10 +117,9 @@
 }
 
 .tv-container {
-    width: 100%;
-    height: 43%;
+    height: 22vw;
     background-image: url("../img/Futuristic-tv.png") ;
-    background-size: 100%;
+    background-size: 81%;
     background-repeat: no-repeat;
 }
 

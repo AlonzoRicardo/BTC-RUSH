@@ -5,7 +5,7 @@ class Miner {
         this.name = name;
         this.rigs = 1;
         this.fraction = 0.5;
-        this.ownedCoins = 1000;
+        this.ownedCoins = 100;
         this.ownedDollars = 1;
         this.ownedCampus = [];
         this.setInterval;
@@ -20,15 +20,11 @@ class Miner {
 Miner.prototype.mine = function () {
     this.setInterval = setInterval(function () {
         this.fraction = (btcRushGame.reward / btcRushGame.totalRigs) * this.rigs;
-        this.ownedCoins += this.fraction * btcRushGame.reward;
-        //console.log("THIS IS MY CUT " + this.fraction);
-        //console.log(this.rigs);
+        this.ownedCoins += (this.fraction * btcRushGame.reward);
         this.ownedDollars = this.ownedCoins * btcRushGame.btc_dollar;
-        //console.log(this.name + " MINER OWNES COINS: " + this.ownedCoins);
         console.log(this.name + " MINER OWNES DOLLARS: " + this.ownedDollars + "$");
         updateDomOwnedCoins();
         updateDomRewardFraction();
-        //btcRushGame.checkWin();
     }.bind(this), 1000);
 }
 

@@ -10,6 +10,7 @@ function start() {
 function stop() {
     miner1.stopMining();
     miner2.stopMining();
+    clearInterval(graphUpdater);
 }
 
 

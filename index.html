@@ -4,12 +4,14 @@
 <head>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/effects.css">
+    <link rel="stylesheet" href="styles/chart.css">
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>BTC RUSH</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="src/main.js"></script>
     <script src="src/players.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
     <script src="src/scripts.js"></script>
@@ -110,10 +112,11 @@
     <div class="right-side-container">
 
         <div class="tvs-right">
-            <h1 id="something">something something</h1>
-            <!-- <img class="tv" src="img/Futuristic-tv.png" alt="">
-            <img class="tv" src="img/Futuristic-tv.png" alt="">
-         -->
+            
+            <div class="container">
+                <canvas id="myChart"></canvas>
+            </div>
+
         </div>
         <div id="campuses">
             <div class="tooltip">
@@ -141,12 +144,10 @@
                 <span class="tooltiptext">Madrid 8.000.000$</span>
             </div>
         </div>
-        <!-- <div class="buttons">
-                    <button>Buy Miners</button>
-                    <button>Gamble</button>
-                </div> -->
+
     </div>
 
+    <script src="src/chart.js"></script>
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.js"></script>-->
     <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
 </body>
