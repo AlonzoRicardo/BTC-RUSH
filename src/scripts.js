@@ -58,7 +58,6 @@ function updateDomTotalCoins() {
 //creates new game and initializes the btc/usd speculation function
 //and the blocks counter
 function startGame() {
-    //var btcRushGame;
     btcRushGame = new BtcRushGame();
     btcRushGame.speculation();
     btcRushGame.increaseBlocksMined();
@@ -72,6 +71,7 @@ var init = function () {
     miner1 = new Miner(p1Name, 0);
     miner2 = new Miner(p2Name, 1);
     start();
+    
 }
 
 $(init());
