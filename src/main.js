@@ -1,37 +1,13 @@
 //Game constructor
-class BtcRushGame {
-    constructor() {
-        this.blocksMined = 1;
-        this.totalCoins = 2098;
-        this.btc_dollar = 7;
-        this.reward = 8;
-        this.totalRigs = 2;
-        this.rigCost = 2000;
-        this.ironHackCampus = [
-            {
-            amsterdam: 2000000
-            },
-            {
-            barcelona: 2000000
-            },
-            {
-            berlin: 4000000
-            },
-            {
-            paris: 4000000    
-            },
-            {
-            madrid: 8000000
-            }
-        ]
-    }
+function BtcRushGame () {
+        this.restartGame();
 }
 
 //regular winning condition function
 BtcRushGame.prototype.checkWin = function (player) {
     if (player.ownedCampus.length >= 3){
         stop();
-        alert(player.name + ' WON');
+        gameOverModal(player.name);
     }
 }
 
@@ -56,9 +32,35 @@ BtcRushGame.prototype.increaseBlocksMined = function () {
 //Made to try to simulate BITCOINS ascending price curve!
 BtcRushGame.prototype.speculation = function () {
     setInterval(function () {
-        this.btc_dollar = Math.floor(Math.random() * (this.blocksMined ** 2))
+        this.btc_dollar = Math.floor(Math.random() * (this.blocksMined ** 5))
         updateDomBtcPrice();
     }.bind(this), 5000)
+}
+
+BtcRushGame.prototype.restartGame= function() {
+    this.blocksMined = 1;
+    this.totalCoins = 2098;
+    this.btc_dollar = 7;
+    this.reward = 8;
+    this.totalRigs = 2;
+    this.rigCost = 2000;
+    this.ironHackCampus = [
+        {
+            amsterdam: 2000000
+        },
+        {
+            barcelona: 2000000
+        },
+        {
+            berlin: 4000000
+        },
+        {
+            paris: 4000000
+        },
+        {
+            madrid: 8000000
+        }
+    ]
 }
 
 /*-----------------------------------------------------------------------*/

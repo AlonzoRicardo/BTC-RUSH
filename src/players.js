@@ -1,15 +1,13 @@
 
 //Player constructor
-class Miner {
-    constructor(name) {
-        this.name = name;
-        this.rigs = 1;
-        this.fraction = 0.5;
-        this.ownedCoins = 100;
-        this.ownedDollars = 1;
-        this.ownedCampus = [];
-        this.setInterval;
-    }
+function Miner(name) {
+    this.name = name;
+    this.rigs = 1;
+    this.fraction = 0.5;
+    this.ownedCoins = 50000;
+    this.ownedDollars = 1;
+    this.ownedCampus = [];
+    this.setInterval;
 }
 
 
@@ -30,7 +28,7 @@ Miner.prototype.mine = function () {
 
 //function to buy more mining power / hash Power...
 Miner.prototype.buyRig = function () {
-    if(this.ownedDollars >= btcRushGame.rigCost) {
+    if (this.ownedDollars >= btcRushGame.rigCost) {
         btcRushGame.totalRigs++;
         this.rigs++;
         this.ownedCoins -= btcRushGame.rigCost / btcRushGame.btc_dollar;
@@ -63,12 +61,11 @@ Miner.prototype.gamble = function () {
 //Buys IH campuses, it removes the bought campus from the game campuses array of objects
 //It also updates the owned coins and adds the bought campus to the bought campus array
 //Also updates the score to know who bought which campus
-Miner.prototype.buyCampus = function() {
+Miner.prototype.buyCampus = function () {
     for (var i = 0; i < btcRushGame.ironHackCampus.length; i++) {
         var campusPrice = Object.values(btcRushGame.ironHackCampus[i]).pop()
         var campusName = Object.keys(btcRushGame.ironHackCampus[i]).pop()
         if (this.ownedDollars >= campusPrice) {
-            console.log('BOUGHT ' + btcRushGame.ironHackCampus[i]);
             this.ownedCampus.push(btcRushGame.ironHackCampus[i])
             this.ownedCoins -= campusPrice / btcRushGame.btc_dollar;
             btcRushGame.ironHackCampus.splice(i, 1);
@@ -77,17 +74,17 @@ Miner.prototype.buyCampus = function() {
         } else {
             console.log('not enough money');
         }
-    }   
+    }
 }
 
 //Functions that allows each player to hack the other one for a 20% of their
 //current holding
 Miner.prototype.hack = function () {
     if (this === miner1) {
-       if (Math.random() * 1 < 0.5) {
-           this.ownedCoins += miner2.ownedCoins * 0.2;
-           miner2.ownedCoins -= miner2.ownedCoins * 0.2;
-       }
+        if (Math.random() * 1 < 0.5) {
+            this.ownedCoins += miner2.ownedCoins * 0.2;
+            miner2.ownedCoins -= miner2.ownedCoins * 0.2;
+        }
     } else if (this === miner2) {
         if (Math.random() * 1 < 0.5) {
             this.ownedCoins += miner1.ownedCoins * 0.2;

@@ -19,13 +19,12 @@
 }
 
 .btc-usd {
-    
     background-color: rgba(240, 248, 255, 0);
     font-size: 2vw;
     color: antiquewhite;
     position: absolute;
     margin: 1vw;
-    left: 44.75%;
+    left: 40.75%;
     top: 0px;
     z-index: 1;
 }
@@ -147,6 +146,12 @@
     position: absolute;
     top: 16vw;
     right: 5vw;
+}
+
+#campuses {
+    margin-top: 3vw;
+
+    width: 96%;
 }
 
 #campuses img {

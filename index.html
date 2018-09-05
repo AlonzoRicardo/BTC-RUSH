@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 
-<head>    
+<head>
     <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
+    <link rel="stylesheet" href="styles/gameOverModal.css">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/effects.css">
     <link rel="stylesheet" href="styles/chart.css">
@@ -14,7 +15,8 @@
     <script src="src/players.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
+    <script src="src/gameOverModal.js"></script>
     <script src="src/scripts.js"></script>
     <script src="src/effects.js"></script>
 </head>
@@ -113,7 +115,7 @@
     <div class="right-side-container">
 
         <div class="tvs-right">
-            
+
             <div class="container">
                 <canvas id="myChart"></canvas>
             </div>
@@ -144,6 +146,17 @@
                 <img id="madrid" src="img/ironhack_logonegro.png" alt="">
                 <span class="tooltiptext">Madrid 8.000.000$</span>
             </div>
+        </div>
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="winner"></p>
+            <button id="startAgain">START AGAIN</button>
         </div>
 
     </div>

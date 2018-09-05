@@ -11,7 +11,8 @@ Chart.defaults.global.defaultFontSize = 8;
 Chart.defaults.global.defaultFontColor = 'rgb(9, 255, 0)';
 
 //creates new Chart Object and gives properties
-btcChart = new Chart(myChart, {
+
+var btcChart = new Chart(myChart, {
   type: 'line',
   data: {
     labels: [],
@@ -26,36 +27,55 @@ btcChart = new Chart(myChart, {
       hoverBorderWidth: 3,
       hoverBorderColor: '#000'
     }, {
-      label: '',
-      fill: false,
-      data: [],
-      backgroundColor: 'rgb(98, 0, 255)',
-      borderWidth: 1,
-      borderColor: 'rgb(98, 0, 255)',
-      hoverBorderWidth: 3,
-      hoverBorderColor: 'rgb(98, 0, 255)'
-    }]
-  },
-  options: {
-    responsive: true,
-    title: {
-      display: true
+        label: '',
+        fill: false,
+        data: [],
+        backgroundColor: 'rgb(98, 0, 255)',
+        borderWidth: 1,
+        borderColor: 'rgb(98, 0, 255)',
+        hoverBorderWidth: 3,
+        hoverBorderColor: 'rgb(98, 0, 255)'
+      }]
     },
-    legend: {
-      display: false
-    },
-    tooltips: {
-      enabled: true
+    options: {
+      responsive: true,
+      title: {
+        display: true
+      },
+      legend: {
+        display: false
+      },
+      tooltips: {
+        enabled: true
+      }
     }
-  }
-});
+  });
+  //Updates the owned coins chart in the DOM 
+  var chartIntervalId = setInterval(function () {
+    btcChart.data.datasets[0].data.push(miner1.ownedCoins);
+    btcChart.data.datasets[1].data.push(miner2.ownedCoins);
+    btcChart.data.labels.push(btcRushGame.blocksMined);
+    btcChart.update();
+  }, 1000)
+    
+  
+  //clears old chart and starts a new one
+  function createNewChart(){
+    btcChart.data.labels = [];
+    btcChart.data.datasets[0].data = [];
+    btcChart.data.datasets[1].data = [];
+    btcChart.update();
+     /* chartIntervalId = setInterval(function () {
+      btcChart.data.datasets[0].data.push(miner1.ownedCoins);
+      btcChart.data.datasets[1].data.push(miner2.ownedCoins);
+      btcChart.data.labels.push(btcRushGame.blocksMined);
+      btcChart.update();
+    }, 1000) */
+  } 
+  
 
 
-//Updates the owned coins chart in the DOM 
-var graphUpdater = setInterval(function () {
-  btcChart.data.datasets[0].data.push(miner1.ownedCoins);
-  btcChart.data.datasets[1].data.push(miner2.ownedCoins);
-  btcChart.data.labels.push(btcRushGame.blocksMined);
-  btcChart.update();
-}, 1000)
-
+  
+  
+  
+  

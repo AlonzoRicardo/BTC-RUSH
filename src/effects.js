@@ -2,8 +2,19 @@
 function campusBoughtBorders(player, city) {
     if(player === miner1) {
         $("#"+city).css({"border": '1px solid green'});
-    } else {
+    } else if (player === miner2){
         $("#"+city).css({"border": '1px solid blue'});    
+    }
+}
+
+//Updates the borders of the bought campuses
+function clearCampusBorders() {
+    //var cities = ['amsterdam', 'berlin', 'madrid', 'paris', 'barcelona']
+    
+    for (var i = 0; i < btcRushGame.ironHackCampus.length; i++) {
+        console.log(Object.keys(btcRushGame.ironHackCampus[i])[0]);
+        
+        $('#'+Object.keys(btcRushGame.ironHackCampus[i])[0]).css({'border': 'none'})
     }
 }
 
