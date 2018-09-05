@@ -55,45 +55,6 @@ function updateDomTotalCoins() {
     $('.coin-num').html(btcRushGame.totalCoins)
 }
 
-
-//function to make specific keys call specific functions
-//basically the controls for player 1
-/* var miner1Controls = function (e) {
-    var key = e.keyCode;
-    if (key === keyA) {
-        miner1Effect(e)
-        miner1.buyRig()
-    } else if (key === keyS) {
-        miner1Effect(e)
-        miner1.gamble()
-    } else if (key === keyD) {
-        miner1Effect(e)
-        miner1.buyCampus()
-    } else if (key === keyC) {
-        miner1Effect(e)
-        miner1.hack()
-    }
-} */
-
-//function to make specific keys call specific functions
-//basically the controls for player 2
-/* var miner2Controls = function (e) {
-    var key = e.keyCode;
-    if (key === keyL) {
-        miner2Effect(e)
-        miner2.buyRig()
-    } else if (key === keyK) {
-        miner2Effect(e)
-        miner2.gamble()
-    } else if (key === keyJ) {
-        miner2Effect(e)
-        miner2.buyCampus()
-    } else if (key === keyN) {
-        miner2Effect(e)
-        miner2.hack();
-    }
-} */
-
 //creates new game and initializes the btc/usd speculation function
 //and the blocks counter
 function startGame() {
@@ -124,16 +85,10 @@ function restartPlayers() {
 //function that runs when the page loads.
 var init = function () {
     startGame();
-    //WATCH 4 PROMPTS
     var p1Name = prompt("Player 1 Name");
     var p2Name = prompt("Player 2 Name");
     miner1 = new Miner(p1Name, 0);
     miner2 = new Miner(p2Name, 1);
-   /*  document.addEventListener("keydown", function (e) {
-        setListeners(e);
-        //miner1Controls(e);
-        //miner2Controls(e);
-    }); */
     start();
 }
 

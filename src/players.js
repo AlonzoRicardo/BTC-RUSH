@@ -12,6 +12,10 @@ function Miner(name, num) {
     this.setKeys(this.num);
     this.setListeners();
 }
+/* 
+Miner.prototype.resetPlayerStats() {
+
+} */
 
 /* var keyA = 65;
 var keyS = 83;
@@ -22,6 +26,7 @@ var keyD = 68;
 var keyC = 67;
 var keyN = 78; */
 
+//decides which keys are to be assigned to each player based on their player number
 Miner.prototype.setKeys = function (num) {
     switch (num) {
         case 0:
@@ -123,20 +128,20 @@ Miner.prototype.hack = function () {
     }
 }
 
-//
+//sets key listeners for both players
 Miner.prototype.setListeners = function () {
     document.addEventListener("keydown", function (event) {
         if (event.keyCode === this.buyRigKey) {
-            /* miner1Effect(e) */
+            minerEffect(event)
             this.buyRig()
         } else if (event.keyCode === this.gambleKey) {
-            /* miner1Effect(e) */
+            minerEffect(event)
             this.gamble()
         } else if (event.keyCode === this.buyCampusKey) {
-            /* miner1Effect(e) */
+            minerEffect(event)
             this.buyCampus()
         } else if (event.keyCode === this.hackKey) {
-            /* miner1Effect(e) */
+            minerEffect(event)
             this.hack()
         }
     }.bind(this));
