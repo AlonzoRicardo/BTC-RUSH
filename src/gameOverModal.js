@@ -5,7 +5,8 @@ function gameOverModal(winner) {
     $('#startAgain').on('click', function() {
         $('#myModal').css({'display': 'none'});
         btcRushGame.restartGame();
-        restartPlayers();
+        miner1.resetPlayerStats()
+        miner2.resetPlayerStats()
         start();
         createNewChart();
         clearCampusBorders();

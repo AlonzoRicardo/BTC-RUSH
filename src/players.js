@@ -3,19 +3,25 @@
 function Miner(name, num) {
     this.num = num;
     this.name = name;
+    this.resetPlayerStats();
+    /* this.rigs = 1;
+    this.fraction = 0.5;
+    this.ownedCoins = 50000;
+    this.ownedDollars = 1;
+    this.ownedCampus = [];
+    this.setInterval; */
+    this.setKeys(this.num);
+    this.setListeners();
+}
+ 
+Miner.prototype.resetPlayerStats = function () {
     this.rigs = 1;
     this.fraction = 0.5;
     this.ownedCoins = 50000;
     this.ownedDollars = 1;
     this.ownedCampus = [];
     this.setInterval;
-    this.setKeys(this.num);
-    this.setListeners();
 }
-/* 
-Miner.prototype.resetPlayerStats() {
-
-} */
 
 /* var keyA = 65;
 var keyS = 83;
@@ -32,7 +38,7 @@ Miner.prototype.setKeys = function (num) {
         case 0:
             this.buyRigKey = 65;
             this.gambleKey = 83;
-            this.buyCampus = 68;
+            this.buyCampusKey = 68;
             this.hackKey = 67;
             break;
             

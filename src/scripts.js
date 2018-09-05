@@ -64,24 +64,6 @@ function startGame() {
     btcRushGame.increaseBlocksMined();
 }
 
-//restarts the stats of each player
-function restartPlayers() {
-    // Refactor this
-    miner1.rigs = 1;
-    miner1.fraction = 0.5;
-    miner1.ownedCoins = 50000;
-    miner1.ownedDollars = 1;
-    miner1.ownedCampus = [];
-    miner1.setInterval;
-
-    miner2.rigs = 1;
-    miner2.fraction = 0.5;
-    miner2.ownedCoins = 50000;
-    miner2.ownedDollars = 1;
-    miner2.ownedCampus = [];
-    miner2.setInterval;
-}
-
 //function that runs when the page loads.
 var init = function () {
     startGame();
