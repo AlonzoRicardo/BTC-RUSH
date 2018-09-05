@@ -1,6 +1,7 @@
 
 //Player constructor
-function Miner(name) {
+function Miner(name, num) {
+    this.num = num;
     this.name = name;
     this.rigs = 1;
     this.fraction = 0.5;
@@ -8,6 +9,35 @@ function Miner(name) {
     this.ownedDollars = 1;
     this.ownedCampus = [];
     this.setInterval;
+    this.setKeys(this.num);
+    this.setListeners();
+}
+
+/* var keyA = 65;
+var keyS = 83;
+var keyK = 75;
+var keyL = 76;
+var keyJ = 74;
+var keyD = 68;
+var keyC = 67;
+var keyN = 78; */
+
+Miner.prototype.setKeys = function (num) {
+    switch (num) {
+        case 0:
+            this.buyRigKey = 65;
+            this.gambleKey = 83;
+            this.buyCampus = 68;
+            this.hackKey = 67;
+            break;
+            
+        case 1:
+            this.buyRigKey = 76;
+            this.gambleKey = 75;
+            this.buyCampusKey = 74;
+            this.hackKey = 78;
+            break;
+    }
 }
 
 
@@ -80,15 +110,34 @@ Miner.prototype.buyCampus = function () {
 //Functions that allows each player to hack the other one for a 20% of their
 //current holding
 Miner.prototype.hack = function () {
-    if (this === miner1) {
+    if (this.num === 0) {
         if (Math.random() * 1 < 0.5) {
             this.ownedCoins += miner2.ownedCoins * 0.2;
             miner2.ownedCoins -= miner2.ownedCoins * 0.2;
         }
-    } else if (this === miner2) {
+    } else if (this.num === 1) {
         if (Math.random() * 1 < 0.5) {
             this.ownedCoins += miner1.ownedCoins * 0.2;
             miner1.ownedCoins -= miner1.ownedCoins * 0.2;
         }
     }
 }
+
+//
+Miner.prototype.setListeners = function () {
+    document.addEventListener("keydown", function (event) {
+        if (event.keyCode === this.buyRigKey) {
+            /* miner1Effect(e) */
+            this.buyRig()
+        } else if (event.keyCode === this.gambleKey) {
+            /* miner1Effect(e) */
+            this.gamble()
+        } else if (event.keyCode === this.buyCampusKey) {
+            /* miner1Effect(e) */
+            this.buyCampus()
+        } else if (event.keyCode === this.hackKey) {
+            /* miner1Effect(e) */
+            this.hack()
+        }
+    }.bind(this));
+} 

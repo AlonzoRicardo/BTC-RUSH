@@ -5,7 +5,6 @@ var miner2;
 function start() {
     miner1.mine();
     miner2.mine();
-
 }
 
 function stop() {
@@ -59,7 +58,7 @@ function updateDomTotalCoins() {
 
 //function to make specific keys call specific functions
 //basically the controls for player 1
-var miner1Controls = function (e) {
+/* var miner1Controls = function (e) {
     var key = e.keyCode;
     if (key === keyA) {
         miner1Effect(e)
@@ -71,15 +70,14 @@ var miner1Controls = function (e) {
         miner1Effect(e)
         miner1.buyCampus()
     } else if (key === keyC) {
-        console.log('entra');
         miner1Effect(e)
         miner1.hack()
     }
-}
+} */
 
 //function to make specific keys call specific functions
 //basically the controls for player 2
-var miner2Controls = function (e) {
+/* var miner2Controls = function (e) {
     var key = e.keyCode;
     if (key === keyL) {
         miner2Effect(e)
@@ -94,11 +92,12 @@ var miner2Controls = function (e) {
         miner2Effect(e)
         miner2.hack();
     }
-}
+} */
 
 //creates new game and initializes the btc/usd speculation function
 //and the blocks counter
 function startGame() {
+    //var btcRushGame;
     btcRushGame = new BtcRushGame();
     btcRushGame.speculation();
     btcRushGame.increaseBlocksMined();
@@ -106,6 +105,7 @@ function startGame() {
 
 //restarts the stats of each player
 function restartPlayers() {
+    // Refactor this
     miner1.rigs = 1;
     miner1.fraction = 0.5;
     miner1.ownedCoins = 50000;
@@ -127,12 +127,13 @@ var init = function () {
     //WATCH 4 PROMPTS
     var p1Name = prompt("Player 1 Name");
     var p2Name = prompt("Player 2 Name");
-    miner1 = new Miner(p1Name);
-    miner2 = new Miner(p2Name);
-    document.addEventListener("keydown", function (e) {
-        miner1Controls(e);
-        miner2Controls(e);
-    });
+    miner1 = new Miner(p1Name, 0);
+    miner2 = new Miner(p2Name, 1);
+   /*  document.addEventListener("keydown", function (e) {
+        setListeners(e);
+        //miner1Controls(e);
+        //miner2Controls(e);
+    }); */
     start();
 }
 

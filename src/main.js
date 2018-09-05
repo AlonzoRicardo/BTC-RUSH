@@ -32,18 +32,19 @@ BtcRushGame.prototype.increaseBlocksMined = function () {
 //Made to try to simulate BITCOINS ascending price curve!
 BtcRushGame.prototype.speculation = function () {
     setInterval(function () {
-        this.btc_dollar = Math.floor(Math.random() * (this.blocksMined ** 5))
+        this.btc_dollar = Math.floor(Math.random() * (this.blocksMined ** 2))
         updateDomBtcPrice();
     }.bind(this), 5000)
 }
 
+//function to restart the game and play again, also resets the scores
 BtcRushGame.prototype.restartGame= function() {
     this.blocksMined = 1;
     this.totalCoins = 2098;
     this.btc_dollar = 7;
     this.reward = 8;
     this.totalRigs = 2;
-    this.rigCost = 2000;
+    this.rigCost = 50000;
     this.ironHackCampus = [
         {
             amsterdam: 2000000
@@ -61,8 +62,5 @@ BtcRushGame.prototype.restartGame= function() {
             madrid: 8000000
         }
     ]
+
 }
-
-/*-----------------------------------------------------------------------*/
-
-
