@@ -22,10 +22,11 @@
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
-    height: 45%;
+    height: 30%;
 }
 
 #startAgain {
+    font-size: 20px;
     color: white;
     border: none;
     width: 120px;

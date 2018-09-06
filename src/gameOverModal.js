@@ -1,4 +1,4 @@
-
+//Displays the gameOver modal and restarts game
 function gameOverModal(winner) {
     gameOverSound.play();
     $('#myModal').css({'display': 'block'});

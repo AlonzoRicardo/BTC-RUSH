@@ -61,17 +61,14 @@ function startGame() {
 }
 
 //function that runs when the page loads.
-var init = function () {
+var init = function (p1Name, p2Name) {
     startGame();
-    var p1Name = prompt("Player 1 Name");
-    var p2Name = prompt("Player 2 Name");
     miner1 = new Miner(p1Name, 0);
     miner2 = new Miner(p2Name, 1);
     start();
-    
 }
 
-$(init());
+//$(init());
 //ASCII LEYEND
 var keyA = 65;
 var keyS = 83;

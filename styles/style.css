@@ -4,6 +4,10 @@
     background: black;
 }
 
+#game {
+    display: none;
+}
+
 .left-side-container {
     float: left;    
     margin: 0;

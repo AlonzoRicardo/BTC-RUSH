@@ -15,7 +15,7 @@
     <script src="src/players.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
     <script src="src/gameOverModal.js"></script>
     <script src="src/scripts.js"></script>
     <script src="src/effects.js"></script>
@@ -24,139 +24,172 @@
 <body>
     <script src="src/audio.js"></script>
     <div id="sounds"></div>
-    <div class="left-side-container">
-        <div class="tv-container">
-            <div class="stats-bar player1-stats">
-                <div class="stat-box">
-                    <h1>Player Name</h1>
-                    <h1 id="player-1-id"></h1>
+    <div id="game">
+        <div class="left-side-container">
+            <div class="tv-container">
+                <div class="stats-bar player1-stats">
+                    <div class="stat-box">
+                        <h1>Player Name</h1>
+                        <h1 id="player-1-id"></h1>
+                    </div>
+                    <div class="stat-box">
+                        <h1>Coins</h1>
+                        <h1 id="player-1-ownedCoins">50</h1>
+                    </div>
+                    <div class="stat-box">
+                        <h1>Rigs</h1>
+                        <h1 id="player-1-ownedRigs">1</h1>
+                    </div>
+                    <div class="stat-box">
+                        <h1>Reward</h1>
+                        <h1 id="player-1-Rewardfraction">0.5</h1>
+                    </div>
                 </div>
-                <div class="stat-box">
-                    <h1>Coins</h1>
-                    <h1 id="player-1-ownedCoins">50</h1>
+                <div class="stats-bar player1-controls">
+                    <div class="stat-box">
+                        <h1 class="A">Buy Miners Press "A"</h1>
+                    </div>
+                    <div class="stat-box">
+                        <h1 class="S">Gamble Press "S"</h1>
+                    </div>
+                    <div class="stat-box">
+                        <h1 class="D">Buy IHs Press "D"</h1>
+                    </div>
+                    <div class="stat-box">
+                        <h1 class="C">Hack Press "C"</h1>
+                    </div>
                 </div>
-                <div class="stat-box">
-                    <h1>Rigs</h1>
-                    <h1 id="player-1-ownedRigs">1</h1>
-                </div>
-                <div class="stat-box">
-                    <h1>Reward</h1>
-                    <h1 id="player-1-Rewardfraction">0.5</h1>
-                </div>
+
             </div>
-            <div class="stats-bar player1-controls">
-                <div class="stat-box">
-                    <h1 class="A">Buy Miners Press "A"</h1>
+
+
+
+            <div class="tv-container">
+                <div class="stats-bar player2-stats">
+                    <div class="stat-box">
+                        <h1>Player Name</h1>
+                        <h1 id="player-2-id"></h1>
+                    </div>
+                    <div class="stat-box">
+                        <h1>Coins</h1>
+                        <h1 id="player-2-ownedCoins">50</h1>
+                    </div>
+                    <div class="stat-box">
+                        <h1>Rigs</h1>
+                        <h1 id="player-2-ownedRigs">1</h1>
+                    </div>
+                    <div class="stat-box">
+                        <h1>Reward</h1>
+                        <h1 id="player-2-Rewardfraction">0.5</h1>
+                    </div>
                 </div>
-                <div class="stat-box">
-                    <h1 class="S">Gamble Press "S"</h1>
-                </div>
-                <div class="stat-box">
-                    <h1 class="D">Buy IHs Press "D"</h1>
-                </div>
-                <div class="stat-box">
-                    <h1 class="C">Hack Press "C"</h1>
+
+                <div class="stats-bar player2-controls">
+                    <div class="stat-box">
+                        <h1 class="L">Buy Miners Press "L"</h1>
+                    </div>
+                    <div class="stat-box">
+                        <h1 class="K">Gamble Press "K"</h1>
+                    </div>
+                    <div class="stat-box">
+                        <h1 class="J">Buy IHs Press "J"</h1>
+                    </div>
+                    <div class="stat-box">
+                        <h1 class="N">Hack Press "N"</h1>
+                    </div>
                 </div>
             </div>
 
         </div>
+        <h1 class="btc-usd">BTC/USD</h1>
+        <h1 class="btc-usd btc-usd-price"></h1>
+        <h1 class="btc-usd total-blocks-mined">Total Blocks Mined</h1>
+        <h1 class="btc-usd blocks-num"></h1>
+        <h1 class="btc-usd total-coins">Total Coins</h1>
+        <h1 class="btc-usd coin-num">2100</h1>
+        <img id="anti-frame" src="img/antique-frame.png" alt="">
+        <div class="right-side-container">
 
+            <div class="tvs-right">
 
+                <div class="container">
+                    <canvas id="myChart"></canvas>
+                </div>
 
-        <div class="tv-container">
-            <div class="stats-bar player2-stats">
-                <div class="stat-box">
-                    <h1>Player Name</h1>
-                    <h1 id="player-2-id"></h1>
-                </div>
-                <div class="stat-box">
-                    <h1>Coins</h1>
-                    <h1 id="player-2-ownedCoins">50</h1>
-                </div>
-                <div class="stat-box">
-                    <h1>Rigs</h1>
-                    <h1 id="player-2-ownedRigs">1</h1>
-                </div>
-                <div class="stat-box">
-                    <h1>Reward</h1>
-                    <h1 id="player-2-Rewardfraction">0.5</h1>
-                </div>
             </div>
+            <div id="campuses">
+                <div class="tooltip">
+                    <img id="barcelona" src="img/ironhack_logonegro.png" alt="IH barcelona">
+                    <span class="tooltiptext">Barcelona 2.000.000$</span>
+                </div>
 
-            <div class="stats-bar player2-controls">
-                <div class="stat-box">
-                    <h1 class="L">Buy Miners Press "L"</h1>
+                <div class="tooltip">
+                    <img id="amsterdam" src="img/ironhack_logonegro.png" alt="">
+                    <span class="tooltiptext">Amsterdam 2.000.000$</span>
                 </div>
-                <div class="stat-box">
-                    <h1 class="K">Gamble Press "K"</h1>
+
+                <div class="tooltip">
+                    <img id="paris" src="img/ironhack_logonegro.png" alt="">
+                    <span class="tooltiptext">Paris 4.000.000$</span>
                 </div>
-                <div class="stat-box">
-                    <h1 class="J">Buy IHs Press "J"</h1>
+
+                <div class="tooltip">
+                    <img id="berlin" src="img/ironhack_logonegro.png" alt="">
+                    <span class="tooltiptext">Berlin 4.000.000$</span>
                 </div>
-                <div class="stat-box">
-                    <h1 class="N">Hack Press "N"</h1>
+
+                <div class="tooltip">
+                    <img id="madrid" src="img/ironhack_logonegro.png" alt="">
+                    <span class="tooltiptext">Madrid 8.000.000$</span>
                 </div>
             </div>
         </div>
 
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <p id="winner"></p>
+                <button id="startAgain">START AGAIN</button>
+            </div>
+        </div>
+        <script src="src/chart.js"></script>
     </div>
-    <h1 class="btc-usd">BTC/USD</h1>
-    <h1 class="btc-usd btc-usd-price"></h1>
-    <h1 class="btc-usd total-blocks-mined">Total Blocks Mined</h1>
-    <h1 class="btc-usd blocks-num"></h1>
-    <h1 class="btc-usd total-coins">Total Coins</h1>
-    <h1 class="btc-usd coin-num">2100</h1>
-    <img id="anti-frame" src="img/antique-frame.png" alt="">
-    <div class="right-side-container">
 
-        <div class="tvs-right">
-
-            <div class="container">
-                <canvas id="myChart"></canvas>
-            </div>
-
+    <!---------------------------------------------------------------------------------->
+    
+    <div id="startScreen">
+        <div id="startLinks">
+            <link href="http://necolas.github.io/normalize.css/3.0.2/normalize.css" rel="stylesheet">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+            <script type="text/javascript" src="startScreen/src/start.js"></script>
+            <link type="text/css" rel="stylesheet" href="startScreen/styles/style.scss">
+            <link rel="stylesheet" href="startScreen/styles/styleModal.css">
         </div>
-        <div id="campuses">
-            <div class="tooltip">
-                <img id="barcelona" src="img/ironhack_logonegro.png" alt="IH barcelona">
-                <span class="tooltiptext">Barcelona 2.000.000$</span>
-            </div>
 
-            <div class="tooltip">
-                <img id="amsterdam" src="img/ironhack_logonegro.png" alt="">
-                <span class="tooltiptext">Amsterdam 2.000.000$</span>
-            </div>
-
-            <div class="tooltip">
-                <img id="paris" src="img/ironhack_logonegro.png" alt="">
-                <span class="tooltiptext">Paris 4.000.000$</span>
-            </div>
-
-            <div class="tooltip">
-                <img id="berlin" src="img/ironhack_logonegro.png" alt="">
-                <span class="tooltiptext">Berlin 4.000.000$</span>
-            </div>
-
-            <div class="tooltip">
-                <img id="madrid" src="img/ironhack_logonegro.png" alt="">
-                <span class="tooltiptext">Madrid 8.000.000$</span>
+        <div id="particles-js">
+                <div class="glitch" id="BTC-RUSH" data-text="฿TC RU$H">BTC RU$H</div>
+            <div>
+                <button onclick="openGame()" id="start-button" class="glitch" data-text="$TART">START</button>
             </div>
         </div>
+
+        <div class="start-modal">
+            <div class="start-modal-content">
+                <h1>GIVE ME YOUR NAMES</h1>
+                <input type="text" placeholder="Player1" id="p1Input">
+                <input type="text" placeholder="Player2" id="p2Input">
+                <h1>PRESS ENTER</h1>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+        <script>
+            particlesJS.load('particles-js', 'startScreen/particlesjs-config.json', function () {
+                console.log('callback - particles.js config loaded');
+            });
+        </script>
     </div>
-
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-
-        <!-- Modal content -->
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <p id="winner"></p>
-            <button id="startAgain">START AGAIN</button>
-        </div>
-
-    </div>
-
-    <script src="src/chart.js"></script>
 </body>
 
 </html>
