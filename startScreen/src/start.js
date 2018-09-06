@@ -3,6 +3,7 @@ var playerTwo;
 var keyEnter = 13;
 
 function openGame() {
+    gameMusic.play();
     $('.start-modal').css('display', 'block');
     document.addEventListener("keydown", function (e) {
         var key = e.keyCode;
