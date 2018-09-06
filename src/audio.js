@@ -1,16 +1,4 @@
-/* var themeSound = 'audio/Protoss Theme 1 - Starcraft Soundtrack.mp3';
-var noMoneySound = 'audio/notEnoughMoney.wav';
-var hackSound = 'audio/hack.wav';
-var gameOverSound = 'audio/gameOver.wav';
-var gambleWin = 'audio/GambleWin.mp3';
-var buyRigSound = 'audio/buyRig.wav';
-var buyRig2Sound = 'audio/buyRig2.wav';
-var buyCampusSound = 'audio/buyCampus.wav'; */
-
-
-/* this.sound.id = 'audio-player';
-this.sound.src = 'audio/Protoss Theme 1 - Starcraft Soundtrack.mp3';
-this.sound.type = 'audio/mp3'; */
+//sound constructor
 function Sound(src) {
     this.sound = document.createElement('audio');
     this.sound.src = src;
@@ -26,7 +14,15 @@ function Sound(src) {
     }
 }
 
+//declaring sounds for later use
 var gameMusic = new Sound('audio/Protoss Theme 1 - Starcraft Soundtrack.mp3');
+var buyRigSound = new Sound('audio/buyRig.wav');
+var buyRig2Sound = new Sound('audio/buyRig2.wav');
+var gambleWin = new Sound('audio/GambleWin.mp3');
+var noMoneySound = new Sound('audio/notEnoughMoney.wav');
+var hackSound = new Sound('audio/hack.wav');
+var buyCampusSound = new Sound('audio/buyCampus.wav');
+var gameOverSound = new Sound('audio/gameOver.wav');
 gameMusic.play();
 
 

@@ -10,10 +10,7 @@ function start() {
 function stop() {
     miner1.stopMining();
     miner2.stopMining();
-    //clearInterval(chartIntervalId);
 }
-
-
 
 //Updates the fraction of the reward for each player in the DOM
 function updateDomRewardFraction() {
@@ -75,7 +72,6 @@ var init = function () {
 }
 
 $(init());
-
 //ASCII LEYEND
 var keyA = 65;
 var keyS = 83;

@@ -4,12 +4,6 @@ function Miner(name, num) {
     this.num = num;
     this.name = name;
     this.resetPlayerStats();
-    /* this.rigs = 1;
-    this.fraction = 0.5;
-    this.ownedCoins = 50000;
-    this.ownedDollars = 1;
-    this.ownedCampus = [];
-    this.setInterval; */
     this.setKeys(this.num);
     this.setListeners();
 }
@@ -22,15 +16,6 @@ Miner.prototype.resetPlayerStats = function () {
     this.ownedCampus = [];
     this.setInterval;
 }
-
-/* var keyA = 65;
-var keyS = 83;
-var keyK = 75;
-var keyL = 76;
-var keyJ = 74;
-var keyD = 68;
-var keyC = 67;
-var keyN = 78; */
 
 //decides which keys are to be assigned to each player based on their player number
 Miner.prototype.setKeys = function (num) {
@@ -70,11 +55,13 @@ Miner.prototype.mine = function () {
 //function to buy more mining power / hash Power...
 Miner.prototype.buyRig = function () {
     if (this.ownedDollars >= btcRushGame.rigCost) {
+        buyRigSound.play();
         btcRushGame.totalRigs++;
         this.rigs++;
         this.ownedCoins -= btcRushGame.rigCost / btcRushGame.btc_dollar;
         updateDomOwnedRigs();
     } else {
+        buyRig2Sound.play();
         console.log('insuficient MONEEEY');
     }
 }
@@ -88,15 +75,14 @@ Miner.prototype.stopMining = function () {
 //function that allows the miners to try their luck, gamble 10 btc and see the results after 3 seconds
 //its 40/60 chance, so 6 times out of 10 the gambler will win.
 Miner.prototype.gamble = function () {
-    setTimeout(function () {
         if (Math.random() * 1 < 0.4) {
+            gambleWin.play();
             this.ownedCoins += 10;
-            console.log("LUCKY SOMBICH " + this.ownedCoins);
+            console.log("LUCKY SOMBICH ");
         } else {
             this.ownedCoins -= 10;
-            console.log("UNLUCKY TY 4 UR MONEY" + this.ownedCoins);
+            console.log("UNLUCKY TY 4 UR MONEY");
         }
-    }.bind(this), 3000)
 }
 
 //Buys IH campuses, it removes the bought campus from the game campuses array of objects
@@ -107,12 +93,14 @@ Miner.prototype.buyCampus = function () {
         var campusPrice = Object.values(btcRushGame.ironHackCampus[i]).pop()
         var campusName = Object.keys(btcRushGame.ironHackCampus[i]).pop()
         if (this.ownedDollars >= campusPrice) {
+            buyCampusSound.play();
             this.ownedCampus.push(btcRushGame.ironHackCampus[i])
             this.ownedCoins -= campusPrice / btcRushGame.btc_dollar;
             btcRushGame.ironHackCampus.splice(i, 1);
             campusBoughtBorders(this, campusName);
             btcRushGame.checkWin(this);
         } else {
+            noMoneySound.play();
             console.log('not enough money');
         }
     }
@@ -147,6 +135,7 @@ Miner.prototype.setListeners = function () {
             minerEffect(event)
             this.buyCampus()
         } else if (event.keyCode === this.hackKey) {
+            hackSound.play();
             minerEffect(event)
             this.hack()
         }

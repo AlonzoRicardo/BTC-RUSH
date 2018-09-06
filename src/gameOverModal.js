@@ -1,5 +1,6 @@
 
 function gameOverModal(winner) {
+    gameOverSound.play();
     $('#myModal').css({'display': 'block'});
     $('#winner').html(winner + " YOU WON");
     $('#startAgain').on('click', function() {
