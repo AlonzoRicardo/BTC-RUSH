@@ -55,6 +55,11 @@ var btcChart = new Chart(myChart, {
     btcChart.data.datasets[0].data.push(miner1.ownedCoins);
     btcChart.data.datasets[1].data.push(miner2.ownedCoins);
     btcChart.data.labels.push(btcRushGame.blocksMined);
+    if(btcChart.data.datasets[0].data.length > 30) {
+      btcChart.data.datasets[0].data.shift();
+      btcChart.data.datasets[1].data.shift();
+      btcChart.data.labels.shift();
+    }
     btcChart.update();
   }, 1000)
     

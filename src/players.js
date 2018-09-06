@@ -11,7 +11,7 @@ function Miner(name, num) {
 Miner.prototype.resetPlayerStats = function () {
     this.rigs = 1;
     this.fraction = 0.5;
-    this.ownedCoins = 50000;
+    this.ownedCoins = 5000;
     this.ownedDollars = 1;
     this.ownedCampus = [];
     this.setInterval;
@@ -46,7 +46,6 @@ Miner.prototype.mine = function () {
         this.fraction = (btcRushGame.reward / btcRushGame.totalRigs) * this.rigs;
         this.ownedCoins += (this.fraction * btcRushGame.reward);
         this.ownedDollars = this.ownedCoins * btcRushGame.btc_dollar;
-        console.log(this.name + " MINER OWNES DOLLARS: " + this.ownedDollars + "$");
         updateDomOwnedCoins();
         updateDomRewardFraction();
     }.bind(this), 1000);
@@ -62,7 +61,6 @@ Miner.prototype.buyRig = function () {
         updateDomOwnedRigs();
     } else {
         buyRig2Sound.play();
-        console.log('insuficient MONEEEY');
     }
 }
 
@@ -77,11 +75,9 @@ Miner.prototype.stopMining = function () {
 Miner.prototype.gamble = function () {
         if (Math.random() * 1 < 0.4) {
             gambleWin.play();
-            this.ownedCoins += 10;
-            console.log("LUCKY SOMBICH ");
+            this.ownedCoins += this.ownedCoins * 0.2;
         } else {
-            this.ownedCoins -= 10;
-            console.log("UNLUCKY TY 4 UR MONEY");
+            this.ownedCoins -= this.ownedCoins * 0.2;
         }
 }
 
@@ -101,7 +97,6 @@ Miner.prototype.buyCampus = function () {
             btcRushGame.checkWin(this);
         } else {
             noMoneySound.play();
-            console.log('not enough money');
         }
     }
 }
@@ -110,12 +105,12 @@ Miner.prototype.buyCampus = function () {
 //current holding
 Miner.prototype.hack = function () {
     if (this.num === 0) {
-        if (Math.random() * 1 < 0.5) {
+        if (Math.random() * 1 < 0.1) {
             this.ownedCoins += miner2.ownedCoins * 0.2;
             miner2.ownedCoins -= miner2.ownedCoins * 0.2;
         }
     } else if (this.num === 1) {
-        if (Math.random() * 1 < 0.5) {
+        if (Math.random() * 1 < 0.1) {
             this.ownedCoins += miner1.ownedCoins * 0.2;
             miner1.ownedCoins -= miner1.ownedCoins * 0.2;
         }

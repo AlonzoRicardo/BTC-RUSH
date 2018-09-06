@@ -56,7 +56,7 @@
 
 .player1-stats {
     margin: 0.8vw 0 0 0;
-    color: rgb(0, 255, 0);
+    color: #00ff00;
     top: 1vw;
     left: 0.2vw;
 }
@@ -70,7 +70,7 @@
 
 .player2-stats {
     margin: 8vw 0 0 0;
-    color: rgb(98, 0, 255);
+    color: #6200ff;
     top: 16vw;
     left: 0.2vw;
 }

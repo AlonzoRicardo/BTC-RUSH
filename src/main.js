@@ -40,8 +40,8 @@ BtcRushGame.prototype.speculation = function () {
 //function to restart the game and play again, also resets the scores
 BtcRushGame.prototype.restartGame= function() {
     this.blocksMined = 1;
-    this.totalCoins = 2098;
-    this.btc_dollar = 7;
+    this.totalCoins = 2000;
+    this.btc_dollar = 5;
     this.reward = 8;
     this.totalRigs = 2;
     this.rigCost = 50000;

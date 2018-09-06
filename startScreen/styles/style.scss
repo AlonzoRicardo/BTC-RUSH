@@ -15,8 +15,6 @@
     position: relative;
   }
 
-
-
   #start-button {
     border: none;
     background-color: rgba(0,0,0,0.2);
@@ -66,12 +64,11 @@
         clip: rect( 0, 900px, 0, 0 );
         color: white;
         content: attr( data-text );
-        
-    left: -2px;
-    overflow: hidden;
-    position: absolute;
-    text-shadow: 1px 0 blue;
-    top: 0;
+        left: -2px;
+        overflow: hidden;
+        position: absolute;
+        text-shadow: 1px 0 blue;
+        top: 0;
   }
 
   /* Expanded Animations */
@@ -85,7 +82,7 @@
     10% {
       clip: rect(48px, 9999px, 29px, 0);
     }
-    15.0% {
+    15% {
       clip: rect(42px, 9999px, 73px, 0);
     }
     20% {
@@ -94,7 +91,7 @@
     25% {
       clip: rect(34px, 9999px, 55px, 0);
     }
-    30.0% {
+    30% {
       clip: rect(86px, 9999px, 73px, 0);
     }
     35% {
@@ -109,10 +106,10 @@
     50% {
       clip: rect(57px, 9999px, 98px, 0);
     }
-    55.0% {
+    55% {
       clip: rect(5px, 9999px, 46px, 0);
     }
-    60.0% {
+    60% {
       clip: rect(82px, 9999px, 31px, 0);
     }
     65% {
@@ -127,7 +124,7 @@
     80% {
       clip: rect(23px, 9999px, 85px, 0);
     }
-    85.0% {
+    85% {
       clip: rect(54px, 9999px, 84px, 0);
     }
     90% {
@@ -150,7 +147,7 @@
     10% {
       clip: rect(79px, 9999px, 85px, 0);
     }
-    15.0% {
+    15% {
       clip: rect(75px, 9999px, 5px, 0);
     }
     20% {
@@ -159,7 +156,7 @@
     25% {
       clip: rect(14px, 9999px, 79px, 0);
     }
-    30.0% {
+    30% {
       clip: rect(1px, 9999px, 66px, 0);
     }
     35% {
@@ -174,10 +171,10 @@
     50% {
       clip: rect(71px, 9999px, 75px, 0);
     }
-    55.0% {
+    55% {
       clip: rect(2px, 9999px, 48px, 0);
     }
-    60.0% {
+    60% {
       clip: rect(30px, 9999px, 16px, 0);
     }
     65% {
@@ -192,7 +189,7 @@
     80% {
       clip: rect(47px, 9999px, 73px, 0);
     }
-    85.0% {
+    85% {
       clip: rect(3px, 9999px, 27px, 0);
     }
     90% {
