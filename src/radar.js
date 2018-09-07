@@ -16,8 +16,8 @@ var myRadarChart = new Chart(ctx2, {
               {
                label: ["P2"],
                data: [42, 23,15],
-               borderColor: "rgba(98, 0, 255, 1)",
-               backgroundColor: "rgba(98, 0, 255, 0.2)"
+               borderColor: "rgba(248, 0, 0, 1)",
+               backgroundColor: "rgba(248, 0, 0, 0.2)"
              } 
         ]
     },

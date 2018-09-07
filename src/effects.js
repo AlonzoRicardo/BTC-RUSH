@@ -16,6 +16,7 @@ function clearCampusBorders() {
 }
 
 //function to display the keypresses in each screen of player1
+//REFACTORIZAR A TOPEEEEEEEEEEEEEEEEEEEEE
 function minerEffect(e) {
     var key = e.keyCode;
     if (key === keyA) {

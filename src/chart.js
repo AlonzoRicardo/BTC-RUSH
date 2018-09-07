@@ -29,11 +29,11 @@ var btcChart = new Chart(myChart, {
         label: '',
         fill: false,
         data: [],
-        backgroundColor: 'rgb(98, 0, 255)',
+        backgroundColor: 'rgb(248, 0, 0)',
         borderWidth: 1,
-        borderColor: 'rgb(98, 0, 255)',
+        borderColor: 'rgb(248, 0, 0)',
         hoverBorderWidth: 3,
-        hoverBorderColor: 'rgb(98, 0, 255)'
+        hoverBorderColor: 'rgb(248, 0, 0)'
       }]
     },
     options: {
@@ -63,6 +63,8 @@ var btcChart = new Chart(myChart, {
       btcChart.data.datasets[1].data.shift();
       btcChart.data.labels.shift();
     }
+    //CHALLENGE
+    /*UPDATE FUNCTION READ chart.js DOCS*/
     btcChart.update();
   }, 1000)
     

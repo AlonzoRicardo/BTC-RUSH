@@ -23,6 +23,6 @@ var noMoneySound = new Sound('audio/notEnoughMoney.wav');
 var hackSound = new Sound('audio/hack.wav');
 var buyCampusSound = new Sound('audio/buyCampus.wav');
 var gameOverSound = new Sound('audio/gameOver.wav');
-//ogameMusic.play();
+
 
 
