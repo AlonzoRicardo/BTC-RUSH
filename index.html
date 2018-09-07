@@ -107,14 +107,16 @@
         <h1 class="btc-usd blocks-num"></h1>
         <h1 class="btc-usd total-coins">Total Coins</h1>
         <h1 class="btc-usd coin-num">2100</h1>
-        <img id="anti-frame" src="img/antique-frame.png" alt="">
         <div class="right-side-container">
-
             <div class="tvs-right">
-
+                
+                 <div class="radar-container">
+                    <canvas id="radar"></canvas>
+                </div> 
                 <div class="container">
                     <canvas id="myChart"></canvas>
                 </div>
+
 
             </div>
             <div id="campuses">
@@ -153,6 +155,7 @@
                 <button id="startAgain">START AGAIN</button>
             </div>
         </div>
+        <script src="src/radar.js"></script>
         <script src="src/chart.js"></script>
     </div>
 

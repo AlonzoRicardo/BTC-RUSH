@@ -22,7 +22,7 @@ var btcChart = new Chart(myChart, {
       data: [],
       fontColor: "white",
       backgroundColor: 'rgb(9, 255, 0)',
-      borderWidth: 1,
+      borderWidth: 0.5,
       borderColor: 'rgb(9, 255, 0)',
       hoverBorderWidth: 3,
       hoverBorderColor: '#000'
@@ -52,6 +52,7 @@ var btcChart = new Chart(myChart, {
   });
   //Updates the owned coins chart in the DOM 
   var chartIntervalId = setInterval(function () {
+    
     btcChart.data.datasets[0].data.push(miner1.ownedCoins);
     btcChart.data.datasets[1].data.push(miner2.ownedCoins);
     btcChart.data.labels.push(btcRushGame.blocksMined);
@@ -60,6 +61,7 @@ var btcChart = new Chart(myChart, {
       btcChart.data.datasets[1].data.shift();
       btcChart.data.labels.shift();
     }
+    
     btcChart.update();
   }, 1000)
     
@@ -70,12 +72,6 @@ var btcChart = new Chart(myChart, {
     btcChart.data.datasets[0].data = [];
     btcChart.data.datasets[1].data = [];
     btcChart.update();
-     /* chartIntervalId = setInterval(function () {
-      btcChart.data.datasets[0].data.push(miner1.ownedCoins);
-      btcChart.data.datasets[1].data.push(miner2.ownedCoins);
-      btcChart.data.labels.push(btcRushGame.blocksMined);
-      btcChart.update();
-    }, 1000) */
   } 
   
 

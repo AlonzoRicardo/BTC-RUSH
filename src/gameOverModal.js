@@ -8,6 +8,7 @@ function gameOverModal(winner) {
         btcRushGame.restartGame();
         miner1.resetPlayerStats()
         miner2.resetPlayerStats()
+        updateDomOwnedRigs();
         start();
         createNewChart();
         clearCampusBorders();

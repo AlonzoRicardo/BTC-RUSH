@@ -4,3 +4,11 @@
     position: absolute;
     width: 568px;
 }
+
+.radar-container {
+    left: 40vw; 
+    top: 29vw;
+    position: absolute;
+    width: 180px;
+    height: 180px;
+}
