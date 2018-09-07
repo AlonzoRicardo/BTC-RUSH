@@ -42,22 +42,22 @@ function minerEffect(e) {
     } else if (key === keyL) {
         $('.L').css({ "color": 'white' });
         setTimeout(function () {
-            $('.L').css({ "color": '#f80000' });
+            $('.L').css({ "color": 'rgb(248, 0, 0)' });
         }, 60);
     } else if (key === keyK) {
         $('.K').css({ "color": 'white' });
         setTimeout(function () {
-            $('.K').css({ "color": '#f80000' });
+            $('.K').css({ "color": 'rgb(248, 0, 0)' });
         }, 60);
     } else if (key === keyJ) {
         $('.J').css({ "color": 'white' });
         setTimeout(function () {
-            $('.J').css({ "color": '#f80000' });
+            $('.J').css({ "color": 'rgb(248, 0, 0)' });
         }, 60);
     } else if (key === keyN) {
         $('.N').css({ "color": 'white' });
         setTimeout(function () {
-            $('.N').css({ "color": '#f80000' });
+            $('.N').css({ "color": 'rgb(248, 0, 0)' });
         }, 60);
     }
 }
