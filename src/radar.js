@@ -1,10 +1,9 @@
 var ctx2 = document.getElementById('radar').getContext('2d');
-/* var ctx = document.getElementById('radar');
-ctx.style.backgroundColor = 'black'; */
 
+
+//radar chart
 var myRadarChart = new Chart(ctx2, {
     type: "radar",
-
     data: {
         labels: ["COINS", "RIGS", "REWARD"],
         datasets: [
@@ -33,8 +32,7 @@ var myRadarChart = new Chart(ctx2, {
         },
         scale: {
             gridLines: {color: 'rgb(155, 173, 138)'},
-            angleLines: { color: 'rgb(155, 173, 138)' }
-             ,
+            angleLines: { color: 'rgb(155, 173, 138)' },
             // Hides the scale
             ticks: {
                 // changes here

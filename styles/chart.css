@@ -1,10 +1,11 @@
+/*line chart*/
 .container {
     top: 2.7vw;
     right: 2vw;
     position: absolute;
     width: 568px;
 }
-
+/*Radar chart*/
 .radar-container {
     left: 40vw; 
     top: 29vw;

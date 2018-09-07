@@ -2,11 +2,13 @@ var btcRushGame;
 var miner1;
 var miner2;
 
+//start mining for both players
 function start() {
     miner1.mine();
     miner2.mine();
 }
 
+//stop both players from Mining
 function stop() {
     miner1.stopMining();
     miner2.stopMining();

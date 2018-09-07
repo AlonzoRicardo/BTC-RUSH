@@ -22,10 +22,14 @@
 </head>
 
 <body>
+    <!--SOUND-->
     <script src="src/audio.js"></script>
     <div id="sounds"></div>
+    <!--MAIN GAME CONTAINER-->
     <div id="game">
+        <!--LEFT SIDE-->
         <div class="left-side-container">
+            <!--P1 TV CONTAINER-->
             <div class="tv-container">
                 <div class="stats-bar player1-stats">
                     <div class="stat-box">
@@ -62,8 +66,7 @@
 
             </div>
 
-
-
+            <!--P2 TV CONTAINER-->
             <div class="tv-container">
                 <div class="stats-bar player2-stats">
                     <div class="stat-box">
@@ -101,24 +104,27 @@
             </div>
 
         </div>
+        <!--GLOBAL STATS-->
         <h1 class="btc-usd">BTC/USD</h1>
         <h1 class="btc-usd btc-usd-price"></h1>
         <h1 class="btc-usd total-blocks-mined">Total Blocks Mined</h1>
         <h1 class="btc-usd blocks-num"></h1>
         <h1 class="btc-usd total-coins">Total Coins</h1>
         <h1 class="btc-usd coin-num">2100</h1>
+
+        <!--RIGHT SIDE-->
         <div class="right-side-container">
             <div class="tvs-right">
-                
+                <!--RADARS-->
                  <div class="radar-container">
                     <canvas id="radar"></canvas>
                 </div> 
                 <div class="container">
                     <canvas id="myChart"></canvas>
                 </div>
-
-
             </div>
+
+            <!--CAMPUSES-->
             <div id="campuses">
                 <div class="tooltip">
                     <img id="barcelona" src="img/ironhack_logonegro.png" alt="IH barcelona">
@@ -147,9 +153,8 @@
             </div>
         </div>
 
-        <!-- The Modal -->
+        <!-- END MODAL -->
         <div id="myModal" class="modal">
-            <!-- Modal content -->
             <div class="modal-content">
                 <p id="winner"></p>
                 <button id="startAgain">START AGAIN</button>
@@ -159,9 +164,12 @@
         <script src="src/chart.js"></script>
     </div>
 
+
+    <!--START MODAL-->
     <!---------------------------------------------------------------------------------->
     
     <div id="startScreen">
+        <!--LINKS FOR THE STARTING SCREEN-->
         <div id="startLinks">
             <link href="https://necolas.github.io/normalize.css/3.0.2/normalize.css" rel="stylesheet">
             <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
@@ -170,13 +178,15 @@
             <link rel="stylesheet" href="startScreen/styles/styleModal.css">
         </div>
 
+        <!--PARTICLES-->
         <div id="particles-js">
                 <div class="glitch" id="BTC-RUSH" data-text="฿TC RU$H">BTC RU$H</div>
             <div>
                 <button onclick="openGame()" id="start-button" class="glitch" data-text="$TART">START</button>
             </div>
         </div>
-
+        
+        <!--START MODAL-->
         <div class="start-modal">
             <div class="start-modal-content">
                 <h1>GIVE ME YOUR NAMES</h1>
@@ -186,6 +196,7 @@
             </div>
         </div>
 
+        <!--PARTICLES CONFIG AND CDN-->
         <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
         <script>
             particlesJS.load('particles-js', 'startScreen/particlesjs-config.json', function () {
@@ -194,5 +205,4 @@
         </script>
     </div>
 </body>
-
 </html>

@@ -11,7 +11,6 @@ Chart.defaults.global.defaultFontSize = 8;
 Chart.defaults.global.defaultFontColor = 'rgb(9, 255, 0)';
 
 //creates new Chart Object and gives properties
-
 var btcChart = new Chart(myChart, {
   type: 'line',
   data: {
@@ -50,18 +49,20 @@ var btcChart = new Chart(myChart, {
       }
     }
   });
+
   //Updates the owned coins chart in the DOM 
   var chartIntervalId = setInterval(function () {
-    
+    //coins
     btcChart.data.datasets[0].data.push(miner1.ownedCoins);
     btcChart.data.datasets[1].data.push(miner2.ownedCoins);
+    //blocks
     btcChart.data.labels.push(btcRushGame.blocksMined);
+    //remove data points
     if(btcChart.data.datasets[0].data.length > 30) {
       btcChart.data.datasets[0].data.shift();
       btcChart.data.datasets[1].data.shift();
       btcChart.data.labels.shift();
     }
-    
     btcChart.update();
   }, 1000)
     
