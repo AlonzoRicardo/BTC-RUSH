@@ -3,7 +3,7 @@ function campusBoughtBorders(player, city) {
     if (player === miner1) {
         $("#" + city).css({ "border": '1px solid green' });
     } else if (player === miner2) {
-        $("#" + city).css({ "border": '1px solid blue' });
+        $("#" + city).css({ "border": '1px solid red' });
     }
 }
 
