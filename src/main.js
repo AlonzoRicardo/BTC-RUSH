@@ -47,19 +47,19 @@ BtcRushGame.prototype.restartGame= function() {
     this.rigCost = 50000;
     this.ironHackCampus = [
         {
-            amsterdam: 2000000
+            amsterdam: 4000000
         },
         {
-            barcelona: 2000000
+            barcelona: 4000000
         },
         {
-            berlin: 4000000
+            berlin: 6000000
         },
         {
-            paris: 4000000
+            paris: 6000000
         },
         {
-            madrid: 8000000
+            madrid: 15000000
         }
     ]
 
